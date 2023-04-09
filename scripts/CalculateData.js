@@ -21,7 +21,7 @@ function CalculateAirportAirLineReport() {
     }
 
     row.Difference = row.Completed -  row.Quota;
-    row.Difference_percent =(100*(row.Difference/row.Quota)).toFixed(1);
+    row.Difference_percent =(100*(row.Difference/row.Quota)).toFixed(0);
     row.Prioritisation_score = row.Difference_percent*row.Difference/100;
 
     row.Completed_percent =(100*(row.Completed/row.Quota)).toFixed(0);
