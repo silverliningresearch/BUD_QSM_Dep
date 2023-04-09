@@ -114,9 +114,6 @@ function prepareInterviewData() {
     var interview_month = interview["InterviewEndDate"].substring(5,7);//"2023-04-03 06:18:18"
     var interview_quarter = getQuarterFromMonth(interview_month);
     
-    console.log("interview[InterviewEndDate]: ", interview["InterviewEndDate"]);
-    console.log("interview_month: ", interview_month);
-    console.log("interview_quarter: ", interview_quarter);
     if ((interview.InterviewState == "Complete") 
       //&& (currentMonth == interview_month)  
       && (currentQuarter == interview_quarter)  
