@@ -10,6 +10,28 @@ function CalculateAirportAirLineReport() {
   total_completed = 0;
   total_quota_completed = 0;
 
+  console.log("interview_data: ", interview_data);
+
+  //check what not belong to quota data
+  var found_temp = 0;
+  var not_in_quota_list =[];
+  for (i = 0; i < interview_data.length; i++) 
+  {
+    total_completed++;
+    found_temp = 0;
+    for (j = 0; j < quota_data.length; j++) 
+    {
+      if (quota_data[j].Airport_Airline.toUpperCase() == interview_data[i].Airport_Airline.toUpperCase()) 
+      { 
+        found_temp = 1;
+      }
+    }
+    if (found_temp==0) not_in_quota_list.push(interview_data[i]);
+  }
+  console.log("not_in_quota_list: ", not_in_quota_list);
+  total_completed_percent = (100*(total_completed/total_quota)).toFixed(0);   
+
+
   for (i = 0; i < quota_data.length; i++) {//airport_airline_report.length;
     row = quota_data[i];
     row.Completed = 0;
