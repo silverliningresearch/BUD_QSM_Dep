@@ -16,7 +16,7 @@ var total_completed;
 var total_completed_percent;
 var total_quota_completed;
 var total_hard_quota;
-var total_quota = 900;
+var total_quota;
 
 /************************************/
 function initCurrentTimeVars() {

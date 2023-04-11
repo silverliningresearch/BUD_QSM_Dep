@@ -29,12 +29,13 @@ function CalculateAirportAirLineReport() {
     if (found_temp==0) not_in_quota_list.push(interview_data[i]);
   }
   console.log("not_in_quota_list: ", not_in_quota_list);
-  total_completed_percent = (100*(total_completed/total_quota)).toFixed(0);   
 
-
+  total_quota = 0;
   for (i = 0; i < quota_data.length; i++) {//airport_airline_report.length;
     row = quota_data[i];
     row.Completed = 0;
+
+    total_quota = total_quota + parseInt(row.Quota);
     for (j = 0; j < interview_data.length; j++) {
       if (row.Airport_Airline.toUpperCase() == interview_data[j].Airport_Airline.toUpperCase()) 
       { 
@@ -48,7 +49,7 @@ function CalculateAirportAirLineReport() {
 
     row.Completed_percent =(100*(row.Completed/row.Quota)).toFixed(0);
 
-    total_completed = total_completed + row.Completed;
+    //total_completed = total_completed + row.Completed;
         
     if ( row.Difference > 0) { //over quota
       total_quota_completed = total_quota_completed +row.Quota*1;
@@ -79,6 +80,7 @@ function CalculateAirportAirLineReport() {
     }  
   }
 
+  total_completed_percent = (100*(total_completed/total_quota)).toFixed(0);   
   daily_plan_data = [];
   daily_plan_data.length = 0;
 
