@@ -111,7 +111,6 @@ function prepareInterviewData() {
   for (i = 0; i < interview_data_full.length; i++) {
     var interview = interview_data_full[i];
 
-
     var interview_month = interview["InterviewEndDate"].substring(5,7);//"2023-04-03 06:18:18"
     var interview_quarter = getQuarterFromMonth(interview_month);
     
@@ -191,8 +190,8 @@ function prepareInterviewData() {
        }
     }
   }
-  console.log("today_flight_list: ", today_flight_list);
-  console.log("quota_data: ", quota_data);
-  console.log("daily_plan_data: ", daily_plan_data);
-  console.log("interview_data: ", interview_data);
+  // console.log("today_flight_list: ", today_flight_list);
+  // console.log("quota_data: ", quota_data);
+  // console.log("daily_plan_data: ", daily_plan_data);
+  // console.log("interview_data: ", interview_data);
 }

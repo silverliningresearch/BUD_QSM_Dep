@@ -10,7 +10,7 @@ function CalculateAirportAirLineReport() {
   total_completed = 0;
   total_quota_completed = 0;
 
-  console.log("interview_data: ", interview_data);
+  //console.log("interview_data: ", interview_data);
 
   //check what not belong to quota data
   var found_temp = 0;
